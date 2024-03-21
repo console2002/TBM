@@ -2,7 +2,8 @@
 #-------------------------------------------------------------------------------
 #   Copyright (c) 2022 DOIDO Technologies.
 #   Version  : 1.0.1
-#   Location : github
+#   Location : github - Console2002
+#   Updated to work with Umbrel OS 1.0 
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
 # This script installs all requirements needed for ST7735 LCD
@@ -18,20 +19,20 @@ sudo apt install python3-rpi.gpio python3-spidev
 echo " "
 echo "Installing Raspberry Pi GPIO and Adafruit GPIO libraries for Python..."
 echo " "
-sudo python3 -m pip install RPi.GPIO
-sudo python3 -m pip install Adafruit_GPIO
-sudo python3 -m pip install psutil
-sudo python3 -m pip install --upgrade certifi
-sudo pip3 install requests
-sudo pip3 install requests[socks]
-sudo pip3 install pysocks
+sudo python3 -m pip install --ignore-installed --user RPi.GPIO
+sudo python3 -m pip install --ignore-installed --user Adafruit_GPIO
+sudo python3 -m pip install --ignore-installed --user psutil
+sudo python3 -m pip install --ignore-installed --user --upgrade certifi
+sudo pip3 install --ignore-installed --user requests
+sudo pip3 install --ignore-installed --user requests[socks]
+sudo pip3 install --ignore-installed --user pysocks
 
 echo " "
 echo "Cloning and installing the LCD library..."
 echo " "
 git clone https://github.com/doido-technologies/st7735-python.git
 cd st7735-python/library
-sudo python3 setup.py install
+sudo python3 setup.py install  # This may need adjustment based on the environment
 
 echo " "
 echo "Enabling SPI port..."
