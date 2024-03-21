@@ -30,7 +30,7 @@ sudo pip3 install --ignore-installed --user pysocks
 echo " "
 echo "Cloning and installing the LCD library..."
 echo " "
-git clone https://github.com/doido-technologies/st7735-python.git
+git clone https://github.com/console2002/st7735-python.git
 cd st7735-python/library
 sudo python3 setup.py install  # This may need adjustment based on the environment
 
